@@ -4,7 +4,7 @@ using namespace std;
 
 
 //2 dim: circle, rectangle,triangle,,square,
-//2 dim: sphere, cuboid,cylinder,cube
+//3 dim: sphere, cuboid,cylinder,cube
 
 class Shape
 {
