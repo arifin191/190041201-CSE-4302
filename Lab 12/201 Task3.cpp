@@ -11,13 +11,22 @@ class safearay
 private:
     T arr[LIMIT];
 public:
+    class OutOfBound
+    {
+    public:
+        int val;
+        OutOfBound(int v)
+        {
+            val=v;
+        }
+    };
     T& operator [](int n) //note: return by reference
     {
         if( n< 0 || n>=LIMIT )
         {
 //            cout << "\nIndex out of bounds";
 //            exit(1);
-            throw this->OutOfBound(n);
+            throw OutOfBound(n);
         }
         return arr[n];
     }
@@ -38,9 +47,9 @@ int main()
         }
 
     }
-    catch( safearay::OutOfBound ob )
+    catch( safearay<double>::OutOfBound ob )
     {
-        cout<<"Out of Bound at"<< ob <<endl;
+        cout<<"Out of Bound at "<< ob.val <<endl;
     }
 
 
